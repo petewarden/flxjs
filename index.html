@@ -1,0 +1,30 @@
+<html>
+<head>
+<script type="text/javascript" src="flxjs.js"></script>
+<script type="text/javascript">
+
+  window.onload = function() {
+
+    var matrix = new Matrix();
+    matrix.scale(2,2);
+    var point = new Point(10, 10);
+    var transformed = matrix.transformPoint(point);
+    var rectangle = new Rectangle(point.x, point.y, (transformed.x-point.x), (transformed.y-point.y));
+
+    document.write('FlxJS test page<br/>See <a href="http://github.com/petewarden/flxjs">http://github.com/petewarden/flxjs</a><br><br>');
+
+    document.write('rectangle=('+
+      rectangle.left()+', '+
+      rectangle.top()+', '+
+      rectangle.right()+', '+
+      rectangle.bottom()+')');
+    document.write('<br/>');
+    document.write('expected=(10, 10, 20, 20)');
+
+
+  }
+
+</script>
+</head>
+<body>
+</body>
